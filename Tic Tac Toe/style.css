@@ -1,0 +1,48 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(53, 51, 51);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: sans-serif;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    /* this defines the lines */
+    gap: 5px;
+    background-color: #e96c05;
+}
+
+.cell {
+    /* border-bottom: 3px solid #e96c05;
+    border-right: 3px solid #e96c05; */
+    background-color: rgb(53, 51, 51);
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mark-x::after {
+    content: "X";
+    font-weight: 700;
+    font-size: 4rem;
+    color: white;
+}
+
+.mark-circle::after {
+    content: "O";
+    font-weight: 700;
+    font-size: 4rem;
+    color: white;
+}
+

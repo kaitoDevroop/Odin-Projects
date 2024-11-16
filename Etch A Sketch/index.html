@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Etch a Sketch</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>ETCH A SKETCH</h1>
+        <nav>
+            <ul>
+                <li><a href="https://github.com/Darowl/Etch-A-Sketch" target="_blank" rel="noopener noreferrer"><img src="./Icons/github.svg" alt="github"> Code</a></li>
+                <li><a href="https://twitter.com/DarowlDev" target="_blank" rel="noopener noreferrer"><img src="./Icons/square-x-twitter.svg" alt="twitter"> Twitter</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="options">
+            <div class="color-pen-container">
+                    <span>Pen:</span>
+                    <input type="color" name="colorPen" id="color-pen" value="#010101"> 
+            </div>
+            <div class="color-background-container">
+                    <span>Background:</span>
+                    <input type="color" name="color-background" id="color-background" value="#ffffff">
+            </div>
+            <button type="button" id="clear">Clear</button>
+            <input type="range" id="grid-input" min="2" max="50" step="2" value="16">
+            <span id="grid-input-text">16 x 16</span>
+        </section>
+        <section class="grid">
+        </section>
+    </main>
+
+    <script src="main.js"></script>
+</body>
+</html>     

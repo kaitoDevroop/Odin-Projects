@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>rock-paper-scissors</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/7759497efc.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <!-- <h1>R-P-S</h1> -->
+        <nav>
+            <ul class="nav-list">
+                <li><a href="./index.html">HOME</a></li>
+                <li><a href="#">CODE</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="home">
+        <h2>Rock-Paper-Sciccors</h2>
+        <button type="button" id="play-button">Play</button>
+    </section>
+    <section class="game hide">
+        <div class="game-player">
+            <div class="player-img-container">
+                <div class="player-img"></div>
+            </div>
+            <h3 class="player-scoreboard">You: <span id="player-score">0</span></h3>
+            <div class="player-choice-container choice-container hide"><div class="null"></div></div>
+        </div>
+        <div class="game-bot">
+            <div class="bot-img-container">
+                <div class="bot-img"></div>
+            </div>
+            <h3 class="bot-scoreboard">Computer: <span id="bot-score">0</span></h3>
+            <div class="bot-choice-container choice-container hide"><div class="null"></div></div>
+        </div>
+    </section>
+    <section class="choices hide">
+        <ul class="choices-list ">
+            <li onclick="game('scissors')" class="choice-btn"><div class="choice-scissors"></div></li>
+            <li onclick="game('paper')" class="choice-btn"><div class="choice-paper"></div></li>
+            <li onclick="game('rock')" class="choice-btn"><div class="choice-rock"></div></li>
+        </ul>
+    </section>
+    <section class="result hide">
+        <h4>You <span id="remark">Win</span> this time</h4>
+        <button type="button" id="restart">Restart</button>
+    </section>
+<!-- 
+    <div id="game" class="game-container">
+        <div id="scoreboard" class="game-scoreboard">
+            <p class="scoreboard-text">You: <span id="scoreP" data-your-score>0</span></p>
+            <p class="scoreboard-text">Computer: <span id="scoreC" data-computer-score>0</span></p>
+        </div>
+        <div id="choices" class="game-choices"> 
+            <button class="btn" onclick="game('Rock')"><i class="fa-solid fa-hand-back-fist"></i></button>
+            <button class="btn" onclick="game('Scissors')"><i class="fa-solid fa-hand-scissors"></i></button>
+            <button class="btn" onclick="game('Paper')"><i class="fa-solid fa-hand"></i></button>
+        </div>
+        <div id="result"></div>
+        <div class="game-message remove" id="game-over">
+            <h3 id="message-text"></h3>
+            <button id="message-btn"></button>
+        </div>
+    </div> -->
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <main class="container">
+        <!-- <p>This is not a real online service! You know you need something like this in your life to help you realize your deepest dreams. Sign up now to get started.</p> -->
+        <div class="container-color"></div>
+        <div class="container-form">
+            <h1>Let's do this!</h1>
+            <form action="/" method="get" id="form">
+                <div class="form-item">
+                    <div class="form-item-input">
+                        <label for="first-name">FIRST NAME</label>
+                        <input type="text" id="first-name" name="first-name"   placeholder="Type Here..." maxlength="20">
+                    </div>
+                    <span class="hide error">* Write 4 characters at least</span>
+                </div>
+                <div class="form-item">
+                    <div class="form-item-input">
+                        <label for="last-name">LAST NAME</label>
+                        <input type="text" id="last-name" name="last-name" maxlength="20"  placeholder="Type Here..." >
+                    </div>
+                    <span class="hide error">* Write 4 characters at least</span>
+                </div>
+                
+                <div class="form-item">
+                    <div class="form-item-input">
+                        <label for="email">EMAIL</label>
+                        <input type="email" id="email" name="email" placeholder="Example@email.com">
+                    </div>
+                    <span class="hide error">* Email is required</span>
+                </div>
+                <div class="form-item">                    
+                    <div class="form-item-input">
+                        <label for="phone">PHONE NUMBER</label>
+                        <input type="tel" id="phone" name="phone" pattern="[0-9]{3}+[0-9]{3}+[0-9]{4}" placeholder="+ 012-345-6789" maxlength="12"> 
+                    </div>                    
+                    <span class="hide error">* Phone number incorrect</span>
+                </div>
+                <div class="form-item">
+                    
+                    <div class="form-item-input">
+                        <label for="password">PASSWORD</label>
+                        <input type="password" id="password" name="password"  minlength="8" placeholder="Type Here...">
+                    </div>
+                    <span class="hide error">* The password should have 8 characters at least</span>
+                </div>
+                <div class="form-item">
+                    <div class="form-item-input">
+                        <label for="confirm-password">CONFIRM PASSWORD</label>
+                        <input type="password" id="confirm-password" name="confirm-password" placeholder="Type Here...">
+                    </div>
+                    <span class="hide error">* password do not match </span>
+                </div>
+                <div class="form-item form-submit">
+                    <input type="submit" value="Create Account">
+                    <p class="submit-text">Already have an account? <a href="#">Log in</a></p>
+                </div>
+            </form>
+        </div>
+    </main>
+</body>
+</html>
