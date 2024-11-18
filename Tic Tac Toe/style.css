@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Mali:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
 * {
     padding: 0;
     margin: 0;
@@ -6,43 +8,65 @@
 
 body {
     background-color: rgb(53, 51, 51);
+    font-family: "Mali", sans-serif;
     min-height: 100vh;
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
-    font-family: sans-serif;
+    flex-direction: column;
+    gap: 1rem;
 }
 
-.board {
+
+.title {
+    text-align: center;
+    font-size: 2.75rem;
+    color: #e96c05;
+}
+
+#board {
+    width: fit-content;
     display: grid;
     grid-template-columns: repeat(3, 100px);
-    grid-template-rows: repeat(3, 100px);
-    /* this defines the lines */
-    gap: 5px;
+    grid-auto-rows: 100px;
+    /* Define the lines */
     background-color: #e96c05;
+    gap: 5px;
 }
 
 .cell {
-    /* border-bottom: 3px solid #e96c05;
-    border-right: 3px solid #e96c05; */
     background-color: rgb(53, 51, 51);
     cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.mark-x::after {
-    content: "X";
-    font-weight: 700;
     font-size: 4rem;
-    color: white;
+    color: #fff;
+    font-weight: 500;
+} 
+
+#text {
+    font-size: 2rem;
+    color: #fff;
 }
 
-.mark-circle::after {
-    content: "O";
-    font-weight: 700;
-    font-size: 4rem;
-    color: white;
+#repeat {
+    border: none;
+    padding: .75rem 1.15rem;
+    border-radius: 4px;
+    font-size: 1.15rem;
+    letter-spacing: 1px;
+    background-color: #e96c05;
+    border: 5px solid #e96c05;
+    color: #fff;
+    font-family: sans-serif;
+    font-weight: 500;
+    
 }
 
+#repeat:hover {
+    transition-duration: 250ms;
+    border: 5px solid #e96c05;
+    background-color: transparent;
+    cursor: pointer;
+}
