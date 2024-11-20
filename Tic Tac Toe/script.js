@@ -11,6 +11,7 @@ const winningOptions = [
     [2, 4, 6]
 ]
 let running = true
+let players = [createPlayer("Player 1", "X"), createPlayer('Player 2', "O")]
 
 const boardOptions = (function () {
     const markBoard = (position, symbol) => board[position] = symbol;
@@ -29,38 +30,29 @@ function createPlayer(namePlayer, symbolPlayer) {
 
 
 function initializeGame() {
-    let players = [createPlayer("Player 1", "X"), createPlayer('Player 2', "O")]
     // define First Turn}
-    players = defineFirstTurn(players)
+    players = defineFirstTurn()
     cellDivs.forEach(cell => {
-        cell.addEventListener("click", (e) => playTurn(e.target, players))
+        cell.addEventListener("click", (e) => playTurn(e.target))
     });
+    document.getElementById('repeat').addEventListener('click', repeatGame)
 }
 
-function playTurn(cell, players) {
+function playTurn(cell) {
     const cellIndex = cell.getAttribute("data-cell")
-    let currentTurn = findCurrentPlayer(players)
+    let currentTurn = findCurrentPlayer()
    
 
     if (board[cellIndex] === "#" && running) {
         boardOptions.markBoard(cellIndex, currentTurn.symbol)
         cell.textContent = currentTurn.symbol
-        checkWinner(players)
+        checkWinner()
         console.log(board)
     }
 }   
 
-function checkWinner(players) {
+function checkWinner() {
     let roundWon = false;
-    const switchPlayer = () => {
-        if (players[0].turn === true && players[1].turn === false) {
-            players[0].turn = false
-            players[1].turn = true
-        } else if (players[0].turn === false && players[1].turn === true) {
-            players[0].turn = true
-            players[1].turn = false
-        }
-    }
 
     for (let i = 0; i < winningOptions.length; i++) {
         const condition = winningOptions[i]
@@ -80,7 +72,7 @@ function checkWinner(players) {
 
     if (roundWon) {
         running = false
-        document.getElementById('text').textContent = `${findCurrentPlayer(players).name} Wins!`
+        document.getElementById('text').textContent = `${findCurrentPlayer().name} Wins!`
         console.log('you win')
 
     } else if (!board.includes("#")) {
@@ -88,11 +80,21 @@ function checkWinner(players) {
         running = false
     } else {
         switchPlayer()
-        document.getElementById("text").textContent = `It's ${findCurrentPlayer(players).name} Turn`
+        document.getElementById("text").textContent = `It's ${findCurrentPlayer().name} Turn`
     }
 }
 
-function defineFirstTurn(players) {
+function switchPlayer() {
+    if (players[0].turn === true && players[1].turn === false) {
+        players[0].turn = false
+        players[1].turn = true
+    } else if (players[0].turn === false && players[1].turn === true) {
+        players[0].turn = true
+        players[1].turn = false
+    }
+}
+
+function defineFirstTurn() {
     const whoGoesFirst = Math.floor(Math.random() * players.length);
 
     players[whoGoesFirst].turn = true
@@ -101,9 +103,18 @@ function defineFirstTurn(players) {
     return players
 }
 
-function findCurrentPlayer(players) {
+function findCurrentPlayer() {
     let currentTurn = players.find(item => item.turn == true)
     return currentTurn
+}
+
+function repeatGame() {
+    boardOptions.resetBoard()
+    cellDivs.forEach(cell => cell.textContent = '')
+    running = true
+    switchPlayer()
+    findCurrentPlayer()
+    document.getElementById("text").textContent = `It's ${findCurrentPlayer().name} Turn`
 }
 
 // function switchTurns 
